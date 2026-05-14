@@ -1,9 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRight, Shield, Sparkles, Users } from 'lucide-react';
 
-// IMPORT YOUR LOGO
-import sabsaLogo from '../assets/sabsa-logo.png'; // 
-
 const tickerItems = [
   'FOCUS & ATTENTION',
   'EMOTIONAL REGULATION',
@@ -32,7 +29,7 @@ export default function Hero() {
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
-  const tickerText = tickerItems.join(' · ') + ' · ';
+  const tickerText = tickerItems.join(' \u00B7 ') + ' \u00B7 ';
 
   return (
     <>
@@ -43,21 +40,6 @@ export default function Hero() {
         style={{ zIndex: 1 }}
       >
         <div className="relative z-10 flex flex-col items-center text-center max-w-[900px] mx-auto pt-20">
-
-          {/* LOGO */}
-          <div
-            className={`mb-8 transition-all duration-700 ${
-              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
-            }`}
-            style={{ transitionDelay: '0.2s' }}
-          >
-            <img
-              src={sabsaLogo}
-              alt="SABSA Logo"
-              className="w-[120px] md:w-[150px] object-contain drop-shadow-[0_0_25px_rgba(6,182,212,0.35)]"
-            />
-          </div>
-
           {/* Overline */}
           <span
             className={`font-mono text-[0.75rem] tracking-[0.15em] text-[#06B6D4] mb-6 transition-all duration-700 ${
@@ -77,11 +59,8 @@ export default function Hero() {
               style={{ transitionDelay: '0.5s' }}
             >
               Activate the{' '}
-              <span className="drop-shadow-[0_0_20px_rgba(6,182,212,0.6)]">
-                Brain
-              </span>.
+              <span className="drop-shadow-[0_0_20px_rgba(6,182,212,0.6)]">Brain</span>.
             </span>
-
             <span
               className={`block text-[clamp(2.5rem,7vw,5.5rem)] transition-all duration-700 mt-1 ${
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -89,11 +68,8 @@ export default function Hero() {
               style={{ transitionDelay: '0.65s' }}
             >
               Strengthen the{' '}
-              <span className="drop-shadow-[0_0_20px_rgba(230,57,70,0.5)]">
-                Body
-              </span>.
+              <span className="drop-shadow-[0_0_20px_rgba(230,57,70,0.5)]">Body</span>.
             </span>
-
             <span
               className={`block text-[clamp(1.8rem,5vw,4rem)] text-[rgba(255,255,255,0.7)] mt-2 transition-all duration-700 ${
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -126,15 +102,11 @@ export default function Hero() {
             <span className="flex items-center gap-1.5">
               <Shield className="w-4 h-4 text-[#06B6D4]" /> 100% Drug-Free
             </span>
-
-            <span className="text-[rgba(255,255,255,0.3)]">·</span>
-
+            <span className="text-[rgba(255,255,255,0.3)]">\u00B7</span>
             <span className="flex items-center gap-1.5">
               <Sparkles className="w-4 h-4 text-[#06B6D4]" /> Evidence-Based
             </span>
-
-            <span className="text-[rgba(255,255,255,0.3)]">·</span>
-
+            <span className="text-[rgba(255,255,255,0.3)]">\u00B7</span>
             <span className="flex items-center gap-1.5">
               <Users className="w-4 h-4 text-[#06B6D4]" /> All Ages
             </span>
@@ -154,7 +126,6 @@ export default function Hero() {
               START YOUR JOURNEY
               <ArrowRight className="w-4 h-4" />
             </button>
-
             <button
               onClick={() => scrollTo('programs')}
               className="pill-button pill-button-secondary"
@@ -186,7 +157,6 @@ export default function Hero() {
           <span className="font-mono text-[0.75rem] tracking-[0.1em] text-[rgba(255,255,255,0.7)] mr-8">
             {tickerText}
           </span>
-
           <span className="font-mono text-[0.75rem] tracking-[0.1em] text-[rgba(255,255,255,0.7)] mr-8">
             {tickerText}
           </span>
@@ -195,3 +165,5 @@ export default function Hero() {
     </>
   );
 }
+
+
